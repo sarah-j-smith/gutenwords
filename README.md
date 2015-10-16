@@ -2,9 +2,9 @@
 
 ### Get Interesting Words From Gutenberg Books
 
-For my game "Word Monsters!" which features monsters attacking your city, that you defend by typing words, I need a list of words from classic books.  I get the books from project Gutenberg, so that part is not too hard.
+For my game [Word Monsters!](http://wordmonsters.co) which features monsters attacking your city, that you defend by typing words, I need a list of words from classic books.  I get the books from [Project Gutenberg](http://www.gutenberg.org), so that part is not too hard to do manually.
 
-But I want the words to capture the flavor of the books: subjectively the "important" words from the book.  Turns out that TF-IDF is not too bad at this.  :-)
+But I want the words to capture the flavor of the books: subjectively the "important" words from the book.  If you have lots of books that is time consuming.  Turns out that [TF-IDF](http://stevenloria.com/finding-important-words-in-a-document-using-tf-idf/) is not too bad at this.  :-)
 
 I also need the words organized by length, and some meta data about the book.  Python modules to the rescue!
 
@@ -147,3 +147,17 @@ Surprisingly in the length 7 words that which we should not name starting with "
     python getbooks.py
 
 
+# Performance
+
+It's going to take an age if you don't comment out many of the books.  Its also memory hungry and poorly designed.  I have a fairly powerful desktop machine which I can leave running so I wasn't worried about those things.
+
+I do try to cache some things to save time, and also to reduce the load on Gutenbergs servers.
+
+
+# Outputs
+
+The resulting data files (as shown in part above) are in the directory "json" from where you run the script.  You should be able to read those files into most programs that handle JSON.
+
+# Credits
+
+Thanks to [Steven Loria](http://stevenloria.com/finding-important-words-in-a-document-using-tf-idf/) for his article on TF-IDF in Python which was the source for some of the ideas/code here.  Thanks to Python and the the author of the awesome [Gutenberg](https://github.com/c-w/Gutenberg) module.
